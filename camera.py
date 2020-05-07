@@ -31,6 +31,19 @@ class VideoCamera(object):
         return jpeg.tobytes()
 
 
+class FilterCamera(object):
+    def __init__(self, filter):
+        self.video = cv2.VideoCapture(0)
+    def __del__(self):
+        self.video.release()
+    def get_frame(self, filter):
+        ret, frame = self.video.read()
+        # DO WHAT YOU WANT WITH TENSORFLOW / KERAS AND OPENCV
+        frame = cv2.flip(frame,1)
+        color_gray = filter
+        gray = cv2.cvtColor(frame, color_gray)
+        ret, jpeg = cv2.imencode('.jpg', gray)
+        return jpeg.tobytes()
 
 
 
