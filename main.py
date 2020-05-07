@@ -1,7 +1,7 @@
 import time
 import cv2
 from flask import Flask, render_template, Response
-from camera import VideoCamera, FilterCamera
+from camera import FilterCamera
 from speech import Speech
 from filter import Filter
 
@@ -40,7 +40,7 @@ def video_feed():
     # return Response(Camera().gen(),
     #                 mimetype='multipart/x-mixed-replace; boundary=frame')
     #shows the video camera on the second page
-    videostream = VideoCamera()
+    videostream = FilterCamera('none')
     return Response(gen(videostream), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 
