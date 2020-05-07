@@ -12,14 +12,11 @@ def gen(camera):
 		frame = camera.get_frame()
 		yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
-
-def filtergen(camera, filter):
+def filter_gen(camera, filter):
 	while True:
 		frame = camera.get_frame()
-		# color = filter
-  #       camcolor = cv2.cvtColor(frame, color)
-  #       ret, jpeg = cv2.imencode('.jpg', camcolor)
 		yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
+
 
 
 
@@ -54,7 +51,7 @@ def audio():
 	var = Speech().audio()
 	#var goes into find filter function and returns the found filter into choosenfilter
 	choosenfilter = Filter().find_filter(var)
-	filtervideostream = FilterCamera()
+	filtervideostream = FilterCamera(choosenfilter)
 	if choosenfilter != 'did not find it here':
 		#shows the camera with the new filter
 		return Response(gen(filtervideostream), mimetype='multipart/x-mixed-replace; boundary=frame')
