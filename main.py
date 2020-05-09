@@ -18,8 +18,6 @@ def filter_gen(camera, filter):
 		yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 
-
-
 #this is the homepage route
 @app.route('/')
 def home():
@@ -49,6 +47,9 @@ def video_feed():
 def audio():
 	#stores what user said in var
 	var = Speech().audio()
+
+	
+		
 	#var goes into find filter function and returns the found filter into choosenfilter
 	choosenfilter = Filter().find_filter(var)
 	filtervideostream = FilterCamera(choosenfilter)
