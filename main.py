@@ -72,4 +72,4 @@ def get_audio():
 @app.route('/save_image')
 def save_image():
 	FilterCamera(choosenfilter).save_image_two()
-	return "Check your images folder!"
+	return render_template('filters.html')
