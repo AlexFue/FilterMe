@@ -1,0 +1,88 @@
+/*<!-- colors 
+green: #5cdb95
+navyblue: #05386b
+whitish: #edf5e1
+-->*/
+@font-face {
+	font-family: 'brush';
+/*	src: url('fonts/fontania-mjxr-webfont.woff')format('woff');
+*/	src: url('fonts/rawkbrush-ywlym-webfont.woff')format('woff');
+}
+
+
+body {
+	background-color: #5cdb95;
+}
+
+.mynav {
+	color: #05386b;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	letter-spacing: 2px;
+}
+
+.nav-items:hover {
+	color: #edf5e1;
+	font-weight: 600;
+}
+
+.logo {
+	font-size: 3.7em;
+	font-family: 'brush';
+	margin-top: -30px;
+	color: #05386b;
+}
+
+.my-jumbotron {
+	height: 450px;
+	border-radius: 10px;
+	background-color: #edf5e1;
+	font-family: 'Raleway', sans-serif;
+	margin: 20px 200px 50px;
+}
+
+.btm-jumbotron {
+	border-radius: 0px;
+	margin-top: 125px;
+	background-color: #05386b;
+	margin-bottom: -30px;
+}
+
+.filters {
+	border-radius: 25px;
+	background-color: #edf5e1;
+	margin-top: -135px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: -30px;
+}
+
+.button-row {
+	text-align: center;
+	align-items: center;
+}
+
+.camera {
+	align-items: center;
+	align-content: center;
+	text-align: center;
+}
+
+.try-me {
+	font-family: 'brush';
+	text-align: center;
+	margin-top: -20px;
+	color: #05386b;
+}
+
+.lists {
+	font-family: 'Raleway', sans-serif;
+	color: #05386b;
+	padding-left: 40px;
+	padding-top: 20px;
+}
+
+.subtitle {
+	padding-bottom: 15px;
+}
+

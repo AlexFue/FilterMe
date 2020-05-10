@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 	<head>
 	</head>
 	<body>
@@ -8,4 +8,159 @@
 			<a href="{{url_for('second')}}">Go back to the second page</a>
 		</ul>
 	</body>
+</html>
+ -->
+
+
+
+<!doctype html>
+<html lang="en">
+​
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+​
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Raleway:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+​
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+​
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='camera.css')}}">
+
+<body>
+<!-- colors 
+green: #5cdb95
+navyblue: #05386b
+whitish: #edf5e1
+-->
+  <div class="d-flex justify-content-around mynav">
+    <div class="p-2 bd-highlight nav-items"><a href="{{url_for('home')}}">Home</a></div>
+    <div class="p-2 bd-highlight nav-items"><a href="{{url_for('second')}}">Camera</div>
+    <div class="p-2 bd-highlight logo"><a href="{{url_for('home')}}">Filter Me</a></div>
+    <div class="p-2 bd-highlight nav-items"><a href="">Gallery</a></div>
+    <div class="p-2 bd-highlight nav-items"><a href="">About</a></div>
+  </div>
+
+
+  <div class="jumbotron my-jumbotron">
+    <!-- CAMERA GOES HERE -->
+    <img src="{{ url_for('filter_feed') }}" width = 500px height = 325px>
+    <hr class="my-4">
+
+    <div class='d-flex justify-content-center'>
+      <a class="btn btn-primary btn-lg button-row mr-4" href="{{url_for('second')}}" role="button">
+        <svg class="bi bi-arrow-return-left" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M5.854 5.646a.5.5 0 010 .708L3.207 9l2.647 2.646a.5.5 0 01-.708.708l-3-3a.5.5 0 010-.708l3-3a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+  <path fill-rule="evenodd" d="M13.5 2.5a.5.5 0 01.5.5v4a2.5 2.5 0 01-2.5 2.5H3a.5.5 0 010-1h8.5A1.5 1.5 0 0013 7V3a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+</svg>
+      </a>
+      <a class="btn btn-success btn-lg button-row" href="{{url_for('save_image')}}" role="button"><svg class="bi bi-download" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M.5 8a.5.5 0 01.5.5V12a1 1 0 001 1h12a1 1 0 001-1V8.5a.5.5 0 011 0V12a2 2 0 01-2 2H2a2 2 0 01-2-2V8.5A.5.5 0 01.5 8z" clip-rule="evenodd"/>
+        <path fill-rule="evenodd" d="M5 7.5a.5.5 0 01.707 0L8 9.793 10.293 7.5a.5.5 0 11.707.707l-2.646 2.647a.5.5 0 01-.708 0L5 8.207A.5.5 0 015 7.5z" clip-rule="evenodd"/>
+        <path fill-rule="evenodd" d="M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z" clip-rule="evenodd"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="jumbotron btm-jumbotron">
+    <div class="jumbotron filters">
+      <div class='try-me'>
+        <h1>Try me!</h1>
+      </div>
+
+      <div class='row d-flex justify-content-around lists'>
+
+
+        <div class=''>
+          <h3 class='subtitle'>OpenCV Filters</h3>
+          <ul id='opencv'>
+            <p>Autumn</p>
+            <p>Bone</p>
+            <p>Jet</p>
+            <p>Winter</p>
+            <p>Rainbow</p>
+            <p>Ocean</p>
+            <p>Summer</p>
+            <p>Spring</p>
+            <p>Cool</p>
+            <p>HSV</p>
+            <p>Pink</p>
+            <p>Hot</p>
+            <p>Coming Soon!</p>
+            <p>Coming Soon!</p>
+          </ul>
+        </div>
+
+        <div class=''>
+          <div class=''>
+            <h3 class='subtitle'>General Filters</h3>
+            <ul>
+              <p>Greyscale</p>
+              <p>Negative</p>
+              <p>Sepia</p>
+              <p>Coming Soon!</p>
+              <p>Coming Soon!</p>            
+            </ul>
+          </div>
+          <div class='mt-5'>
+            <h3 class='subtitle'>Special Filters</h3>
+            <ul>
+              <p>Pig Nose</p>
+              <p>Coming Soon!</p>
+              <p>Coming Soon!</p>
+            </ul>
+          </div>
+        </div>
+
+        <div class=''>
+          <h3 class='subtitle'>Color Overlay Filters</h3>
+          <div>
+            <p>Red</p>
+            <p>Green</p>
+            <p>Blue</p>
+            <p>Orange</p>
+            <p>Yellow</p>
+            <p>Purple</p>
+            <p>Coming Soon!</p>
+            <p>Coming Soon!</p>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+​
+</body>
+​
+​
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+​
 </html>

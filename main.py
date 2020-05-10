@@ -4,12 +4,14 @@ from flask import Flask, render_template, Response
 from camera import FilterCamera
 from speech import Speech
 from filter import Filter
+import os
 
 
 app = Flask(__name__)
 # Function that generates the camera on the webpage
 def gen(camera):
 	while True:
+		global frame
 		frame = camera.get_frame()
 		yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
@@ -66,3 +68,8 @@ def get_audio():
 	global filtervideostream
 	filtervideostream = FilterCamera(choosenfilter)
 	return render_template('filters.html')
+
+@app.route('/save_image')
+def save_image():
+	FilterCamera(choosenfilter).save_image_two()
+	return "Check your images folder!"

@@ -1,7 +1,7 @@
 import time
 import cv2
 from flask import Flask, render_template, Response
-
+import os
 
 def apply(applyfilter, frame):
     # A list of filters that we wanted to experiment with
@@ -25,6 +25,7 @@ def apply(applyfilter, frame):
 
 class FilterCamera(object):
     def __init__(self, filter):
+        global video
         self.video = cv2.VideoCapture(0)
         # Global variable for the users filters choice (referring to value, not key)
         global filters
@@ -42,7 +43,6 @@ class FilterCamera(object):
 
     def get_frame(self):
         ret, frame = self.video.read()
-
         # DO WHAT YOU WANT WITH TENSORFLOW / KERAS AND OPENCV
         # Checks what list the user's filter choice goes into.
         if str(filters) in list_filters:
@@ -63,4 +63,56 @@ class FilterCamera(object):
         elif str(filters) in color_map:
             frame = cv2.flip(frame,1)
             ret, jpeg = cv2.imencode('.jpg', cv2.applyColorMap(frame, filters))
-            return jpeg.tobytes()
+            return jpeg.tobytes()      
+    def save_image_two(self):
+        try:
+        # creating a folder named data
+            if not os.path.exists('images'):
+                os.makedirs('images')
+        # if not created then raise error
+        except OSError:
+            print('Error: Creating directory of data')
+        # frame
+        currentframe = 1
+        
+        ret, frame = self.video.read()
+
+        if str(filters) in list_filters:
+            frame = cv2.flip(frame,1)
+            user_filter = filters
+            color_cam = cv2.cvtColor(frame, user_filter)
+            ret, jpeg = cv2.imencode('.jpg', color_cam)
+            if ret:
+        # if video is still left continue creating images
+                name = './images/ColorSpace' + str(currentframe) + '.jpg'
+                currentframe += 1
+                cv2.imwrite(name, cv2.cvtColor(frame, user_filter))
+        elif filters in non_filter:
+            frame = cv2.flip(frame,1)
+            user_filter = apply(filters, frame)
+            ret, jpeg = cv2.imencode('.jpg', user_filter)
+            if ret:
+        # if video is still left continue creating images
+                name = './images/Overlay' + str(currentframe) + '.jpg'
+                currentframe += 1
+                cv2.imwrite(name, apply(filters, frame))
+        elif str(filters) in color_map:
+            frame = cv2.flip(frame,1)
+            ret, jpeg = cv2.imencode('.jpg', cv2.applyColorMap(frame, filters))
+            if ret:
+        # if video is still left continue creating images
+                name = './images/ColorMap' + str(currentframe) + '.jpg'
+                currentframe += 1
+                cv2.imwrite(name, cv2.applyColorMap(frame, filters))
+        else:
+            if ret:
+        # if video is still left continue creating images
+                name = './images/None' + str(currentframe) + '.jpg'
+                currentframe += 1
+                # writing the extracted images
+                cv2.imwrite(name, frame)
+
+
+
+
+
