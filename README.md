@@ -15,7 +15,7 @@ The following functionality is completed:
 
 Here's a walkthrough of implemented:
 
-![Filter Me Walkthrough](FilterMeDemo.gif)
+<img src='AppDemo.gif'>
 
 ## License
 
