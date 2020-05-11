@@ -5,7 +5,7 @@ from PIL import Image
 
 class Filter:
 	def find_filter(self, audio):
-		
+		global filter_name
 		# A dictionary of the filters and there respective keys
 		dic = {'alien' : cv2.COLOR_BGR2HLS,
 			   'beach' : cv2.COLOR_BGR2LUV,
@@ -23,7 +23,7 @@ class Filter:
 			   'hsv': cv2.COLORMAP_HSV,
 			   'pink': cv2.COLORMAP_PINK,
 			   'hot': cv2.COLORMAP_HOT,
-			   'gray': 'gray',
+			   'grayscale': 'grayscale',
 			   'negative' : 'negative',
 			   'red': 'red',
 			   'blue': 'blue',
@@ -37,8 +37,17 @@ class Filter:
 		# key word the user selected (if on is selected)
 		for key, value in dic.items():
 			if audio == key:
+				filter_name = key
 				return value
 				break
 			if key in audio:
+				filter_name = key
 				return value
+		filter_name = 'none'
 		return default
+
+	def get_name(self):
+		if filter_name == 'none':
+			return "no filter"
+		else:
+			return filter_name

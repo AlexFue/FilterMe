@@ -1,13 +1,13 @@
 <!-- <html>
-	<head>
-	</head>
-	<body>
-		<h1>This is the filtered page</h1>
-		<img src="{{ url_for('filter_feed') }}">
-		<ul>
-			<a href="{{url_for('second')}}">Go back to the second page</a>
-		</ul>
-	</body>
+  <head>
+  </head>
+  <body>
+    <h1>This is the filtered page</h1>
+    <img src="{{ url_for('filter_feed') }}">
+    <ul>
+      <a href="{{url_for('second')}}">Go back to the second page</a>
+    </ul>
+  </body>
 </html>
  -->
 
@@ -36,6 +36,104 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{url_for('static', filename='camera.css')}}">
 
+
+
+    <style>
+
+      @media all and (max-width: 855px) and (min-width: 756px){
+        img {
+          margin-top: -50px; 
+          margin-left: -10%;
+        } 
+      }
+
+      @media all and (max-width: 900px) and (min-width: 856px){
+        img {
+          margin-top: -50px; 
+          margin-left: -7%;
+        } 
+      }
+
+      @media all and (max-width: 955px) and (min-width: 901px){
+        img {
+          margin-top: -50px; 
+          margin-left: -5%;
+        } 
+      }
+
+      @media all and (max-width: 999px) and (min-width: 956px){
+        img {
+          margin-top: -50px; 
+          margin-left: -3%;
+        } 
+      }
+
+      @media all and (max-width: 1049px) and (min-width: 970px){
+        img {
+          margin-top: -50px; 
+          margin-left: 6%;
+        } 
+      }
+
+      @media all and (max-width: 1100px) and (min-width: 1050px){
+        img {
+          margin-top: -50px; 
+          margin-left: 10%;
+        } 
+      }
+
+
+      @media all and (max-width: 1155px) and (min-width: 1101px){
+        img {
+          margin-top: -50px; 
+          margin-left: 13%;
+        } 
+      }
+
+      @media all and (max-width: 1200px) and (min-width: 1156px){
+        img {
+          margin-top: -50px; 
+          margin-left: 15%;
+        } 
+      }
+
+      @media all and (max-width: 1255px) and (min-width: 1201px){
+        img {
+          margin-top: -50px; 
+          margin-left: 17%;
+        } 
+      }
+
+      @media all and (max-width: 1300px) and (min-width: 1256px){
+        img {
+          margin-top: -50px; 
+          margin-left: 20%;
+        } 
+      }
+
+      @media all and (max-width: 1355px) and (min-width: 1301px){
+        img {
+          margin-top: -50px; 
+          margin-left: 22%;
+        } 
+      }
+
+      @media all and (max-width: 1400px) and (min-width: 1356px){
+        img {
+          margin-top: -50px; 
+          margin-left: 20%;
+        } 
+      }
+
+      @media all and (max-width: 1480px) and (min-width: 1401px){
+        img {
+          margin-top: -50px; 
+          margin-left: 24%;
+        } 
+      }
+
+    </style>
+
 <body>
 <!-- colors 
 green: #5cdb95
@@ -43,11 +141,11 @@ navyblue: #05386b
 whitish: #edf5e1
 -->
   <div class="d-flex justify-content-around mynav">
-    <div class="p-2 bd-highlight nav-items"><a href="{{url_for('home')}}">Home</a></div>
-    <div class="p-2 bd-highlight nav-items"><a href="{{url_for('second')}}">Camera</div>
-    <div class="p-2 bd-highlight logo"><a href="{{url_for('home')}}">Filter Me</a></div>
-    <div class="p-2 bd-highlight nav-items"><a href="">Gallery</a></div>
-    <div class="p-2 bd-highlight nav-items"><a href="">About</a></div>
+    <div class="p-2 bd-highlight nav-items"><a href="{{url_for('home')}}"style="color: #05368b !important; text-decoration: none !important;">Home</a></div>
+    <div class="p-2 bd-highlight nav-items"><a href="{{url_for('second')}}"style="color: #05368b !important; text-decoration: none !important;">Camera</div>
+    <div class="p-2 bd-highlight logo"><a href="{{url_for('home')}}"style="color: #05368b !important; font-family: brush !important; text-decoration: none !important; margin-right: 80px;">Filter Me</a></div>
+    <div class="p-2 bd-highlight nav-items"><a href=""style="color: #05368b !important; text-decoration: none !important;">Gallery</a></div>
+    <div class="p-2 bd-highlight nav-items"><a href=""style="color: #05368b !important; text-decoration: none !important;">About</a></div>
   </div>
 
 
@@ -68,7 +166,9 @@ whitish: #edf5e1
         <path fill-rule="evenodd" d="M5 7.5a.5.5 0 01.707 0L8 9.793 10.293 7.5a.5.5 0 11.707.707l-2.646 2.647a.5.5 0 01-.708 0L5 8.207A.5.5 0 015 7.5z" clip-rule="evenodd"/>
         <path fill-rule="evenodd" d="M8 1a.5.5 0 01.5.5v8a.5.5 0 01-1 0v-8A.5.5 0 018 1z" clip-rule="evenodd"/></svg>
       </a>
+      <h4 style="color: #05368b !important; padding-left: 15px !important; padding-top: 10px !important;">{{message}}</h4>
     </div>
+
 
   </div>
 
@@ -96,8 +196,9 @@ whitish: #edf5e1
             <p>HSV</p>
             <p>Pink</p>
             <p>Hot</p>
-            <p>Coming Soon!</p>
-            <p>Coming Soon!</p>
+            <p>Alien</p>
+            <p>Beach</p>
+            <p>Lime</p>
           </ul>
         </div>
 
@@ -108,16 +209,15 @@ whitish: #edf5e1
               <p>Greyscale</p>
               <p>Negative</p>
               <p>Sepia</p>
-              <p>Coming Soon!</p>
-              <p>Coming Soon!</p>            
+              <p>Black and White x 4</p>  
+              <p>More Coming Soon!</p>      
             </ul>
           </div>
           <div class='mt-5'>
             <h3 class='subtitle'>Special Filters</h3>
             <ul>
-              <p>Pig Nose</p>
-              <p>Coming Soon!</p>
-              <p>Coming Soon!</p>
+              <p>Pig Nose (COMING REAL SOON)</p>
+              <p>More Coming Soon!</p>
             </ul>
           </div>
         </div>
@@ -131,8 +231,7 @@ whitish: #edf5e1
             <p>Orange</p>
             <p>Yellow</p>
             <p>Purple</p>
-            <p>Coming Soon!</p>
-            <p>Coming Soon!</p>
+            <p>More Coming Soon!</p>
           </div>
         </div>
 

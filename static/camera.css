@@ -9,7 +9,6 @@ whitish: #edf5e1
 */	src: url('fonts/rawkbrush-ywlym-webfont.woff')format('woff');
 }
 
-
 body {
 	background-color: #5cdb95;
 }
@@ -28,7 +27,7 @@ body {
 
 .logo {
 	font-size: 3.7em;
-	font-family: 'brush';
+	font-family: 'brush' !important;
 	margin-top: -30px;
 	color: #05386b;
 }

@@ -1,5 +1,6 @@
 import time
 import cv2
+import random
 from flask import Flask, render_template, Response
 from camera import FilterCamera
 from speech import Speech
@@ -65,11 +66,26 @@ def get_audio():
 	# Var goes into find filter function and returns the found filter into choosenfilter
 	global choosenfilter
 	choosenfilter = Filter().find_filter(var)
+	user_filter = Filter().get_name()
 	global filtervideostream
 	filtervideostream = FilterCamera(choosenfilter)
-	return render_template('filters.html')
+	curr_string = "You are currently using " + str(user_filter) + "!"
+	return render_template('filters.html', message = curr_string)
+
+@app.route('/random')
+def get_random():
+	list_of_keys = ['gray', 'negative', 'red', 'blue', 'green', 'yellow', 'orange', 'purple', 'hot', 'pink', 'hsv',
+					'cool', 'spring', 'summer', 'ocean', 'rainbow', 'winter', 'jet', 'bone', 'autumn', 'alien',
+					'beach', 'lime', 'black and white x 4']
+	random_filter = list_of_keys[random.randint(0,22)]
+	global choosenfilter
+	choosenfilter = Filter().find_filter(random_filter)
+	global filtervideostream
+	filtervideostream = FilterCamera(choosenfilter)
+	curr_string = "You are currently using " + str(random_filter) + "!"
+	return render_template('filters.html', message=curr_string)
 
 @app.route('/save_image')
 def save_image():
 	FilterCamera(choosenfilter).save_image_two()
-	return render_template('filters.html')
+	return render_template('filters.html', message = "Image saved!")

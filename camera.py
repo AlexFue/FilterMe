@@ -5,7 +5,7 @@ import os
 
 def apply(applyfilter, frame):
     # A list of filters that we wanted to experiment with
-    if applyfilter == 'gray':
+    if applyfilter == 'grayscale':
         return cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     if applyfilter == 'negative':
         return cv2.bitwise_not(frame)
@@ -21,7 +21,6 @@ def apply(applyfilter, frame):
         return cv2.addWeighted((0,162,255,1), .25, frame, .89, 0, frame)
     if applyfilter == 'purple':
         return cv2.addWeighted((125,0,128,1), .25, frame, .89, 0, frame)
-
 
 class FilterCamera(object):
     def __init__(self, filter):
@@ -74,7 +73,6 @@ class FilterCamera(object):
             print('Error: Creating directory of data')
         # frame
         currentframe = 1
-        
         ret, frame = self.video.read()
 
         if str(filters) in list_filters:
@@ -111,8 +109,6 @@ class FilterCamera(object):
                 currentframe += 1
                 # writing the extracted images
                 cv2.imwrite(name, frame)
-
-
 
 
 
