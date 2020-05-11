@@ -13,9 +13,9 @@ The following functionality is completed:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented:
 
-<img src='FilterMeDemo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Filter Me Walkthrough](FilterMeDemo.gif)
 
 ## License
 
