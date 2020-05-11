@@ -10,7 +10,7 @@ The following functionality is completed:
 * [x] User can **successfully use a functioning microphone button** to ask for desired filter to use
 * [x] User's **list of items persisted** upon modification and and retrieved properly on app restart
 * [x] User can **tap a random button that generates a random filter** if they don't have 
-* and more!
+* [x] and more!
 
 ## Video Walkthrough
 
