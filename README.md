@@ -1,4 +1,4 @@
-# Project - The *Filter Me* App.
+# Project - *Filter Me* Application
 
 **Filter Me** is a web application where users can apply filters to themselves with their computer’s camera. The user is able to apply to a filter by pressing a microphone icon and saying the filter name or pressing the random filter icon. If the user wants they can also save the image to their computer. 
 
