@@ -18,6 +18,37 @@ Here's a walkthrough of our Filter Me Application:
 
 <img src='AppDemo.gif'>
 
+## Installation
+
+OS X & Linux &:
+
+```sh
+git clone https://github.com/AlexFue/FilterMe.git
+```
+
+## Development Setup 
+Make sure to have an environments when downloading these libraries needed. 
+
+Flask, render_template, Response:
+```sh
+pip install Flask
+```
+
+cv2:
+```sh
+pip install opencv-python
+```
+
+Image:
+```sh
+pip install Pillow
+
+```
+
+sr:
+```sh
+pip install SpeechRecognition
+
 ## License
 
     Copyright [2019] [Aundre Labrador, Prince Rios, Eric Chavez, Alex Fuentes, Edward Cluster]
