@@ -42,12 +42,12 @@ pip install opencv-python
 Image:
 ```sh
 pip install Pillow
-
 ```
 
 sr:
 ```sh
 pip install SpeechRecognition
+```
 
 ## License
 
