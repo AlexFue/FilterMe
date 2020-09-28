@@ -49,6 +49,19 @@ sr:
 pip install SpeechRecognition
 ```
 
+## Contributors
+* Aundre Labrador – [Github](https://github.com/AlexFue) – [Linkedin](https://www.linkedin.com/in/aundrelabrador/)
+* Alex Espinoza-Fuentes – [Github](https://github.com/aundrelab) – [Linkedin](https://www.linkedin.com/in/alex-espinoza-fuentes/)
+* Edward Cluster – [Github](https://github.com/ecluster) – [Linkedin](https://www.linkedin.com/in/edward-cluster/)
+* Prince Rios – [Github](https://github.com/princeriostheprodigy) – [Linkedin](https://www.linkedin.com/in/prince-rios-511639194/)
+* Eric Chavez – [Github](https://github.com/ericchavez831) – [Linkedin](https://www.linkedin.com/in/echavezvelez/)
+
+## Contributing
+1. Fork it at (https://github.com/AlexFue/FilterMe.git)
+2. Commit your changes (`git commit -m 'Add comment'`)
+3. Push to the branch (`git push origin master`)
+4. Create a new Pull Request
+
 ## License
 
     Copyright [2019] [Aundre Labrador, Prince Rios, Eric Chavez, Alex Fuentes, Edward Cluster]
