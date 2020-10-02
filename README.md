@@ -48,6 +48,17 @@ sr:
 ```sh
 pip install SpeechRecognition
 ```
+## Usage example
+For those who want to have fun and make some fun pictures that you can share with you and your friends. You can now take pictures using our app and have the ability to add filters using your voice! If you like the pictures, you can save them on your computer, CRAZY! Don't go off and have too much fun with this web app guys. 
+
+## Release History
+* 0.0.1
+    * Created: able to open camera 
+* 0.0.2
+    * Created: connected voice recognition to camera filters
+* 0.0.3
+    * Created: Added some stylistic features 
+    * Work in progress
 
 ## Contributors
 * Aundre Labrador – [Github](https://github.com/AlexFue) – [Linkedin](https://www.linkedin.com/in/aundrelabrador/)
